@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Tgpf.Isr.Model.Param,Tgpf.Isr.Model" table="Param" lazy="false">
+    <composite-id name="Id" class="Tgpf.Isr.Model.ParamPK,Tgpf.Isr.Model">
+      <key-property name="Paramid" column="ParamId" type="String"/>
+      <key-property name="Paramcode" column="ParamCode" type="String"/>
+
+    </composite-id>
+
+
+    <property name="Paramname" column="ParamName" type="String"/>
+  </class>
+</hibernate-mapping>
+
+

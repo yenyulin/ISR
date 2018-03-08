@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <!-- Referenced by main application context configuration file -->
+
+  <description>
+    The MyMall service layer definitions
+  </description>
+
+
+  <object id="TxProxyConfigurationTemplate" abstract="true"
+        type="Spring.Transaction.Interceptor.TransactionProxyFactoryObject, Spring.Data">
+
+    <property name="PlatformTransactionManager" ref="HibernateTransactionManager"/>
+
+    <property name="TransactionAttributes">
+      <name-values>
+        <!-- Add common methods across your services here -->
+        <add key="Save*" value="PROPAGATION_REQUIRED"/>
+        <add key="Delete*" value="PROPAGATION_REQUIRED"/>
+        <add key="Update*" value="PROPAGATION_REQUIRED"/>
+      </name-values>
+    </property>
+    <!-- note you can use alias names so that this configuration file is -->
+    <!-- not dependent on the precise object name of the logging advice  -->
+    <!-- defined in Aspects.xml                                          -->
+    <property name="PreInterceptors" ref="CommonLoggingAroundAdvice"/>
+  </object>
+
+  <!-- "Basic" Property placeholder configurer for database settings -->
+  <object id="BasicService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.BasicService, Tgpf.Isr.Service">
+        <property name="BasicDao" ref="BasicDao"/>
+      </object>
+    </property>
+  </object>
+
+  <!-- Property placeholder configurer for database settings -->
+  <object id="AspnetUsersService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.AspnetUsersService, Tgpf.Isr.Service">
+        <property name="AspnetUsersDao" ref="AspnetUsersDao"/>
+      </object>
+    </property>
+  </object>
+
+  <object id="MembershipService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.MembershipService, Tgpf.Isr.Service">
+        <property name="MembershipDao" ref="MembershipDao"/>
+      </object>
+    </property>
+  </object>
+  <object id="ZipService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.ZipService, Tgpf.Isr.Service">
+        <property name="ZipDao" ref="ZipDao"/>
+      </object>
+    </property>
+  </object>
+
+  <object id="ReuseTechService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.ReuseTechService, Tgpf.Isr.Service">
+        <property name="ReuseTechDao" ref="ReuseTechDao"/>
+      </object>
+    </property>
+  </object>
+  <object id="ParamService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.ParamService, Tgpf.Isr.Service">
+        <property name="ParamDao" ref="ParamDao"/>
+      </object>
+    </property>
+  </object>
+  <object id="MatchService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.MatchService, Tgpf.Isr.Service">
+        <property name="MatchDao" ref="MatchDao"/>
+      </object>
+    </property>
+  </object>
+  <object id="CaseService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.CaseService, Tgpf.Isr.Service">
+        <property name="CaseDao" ref="CaseDao"/>
+      </object>
+    </property>
+  </object>
+  <object id="MarqueeService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.MarqueeService, Tgpf.Isr.Service">
+        <property name="MarqueeDao" ref="MarqueeDao"/>
+      </object>
+    </property>
+  </object>
+  <object id="TechInfoService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.TechInfoService, Tgpf.Isr.Service">
+        <property name="TechInfoDao" ref="TechInfoDao"/>
+      </object>
+    </property>
+  </object>
+  <object id="NewsService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.NewsService, Tgpf.Isr.Service">
+        <property name="NewsDao" ref="NewsDao"/>
+      </object>
+    </property>
+  </object>
+  <object id="ExamplesService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.ExamplesService, Tgpf.Isr.Service">
+        <property name="ExamplesDao" ref="ExamplesDao"/>
+      </object>
+    </property>
+  </object>
+  <object id="UserProfilesService"  parent="TxProxyConfigurationTemplate">
+    <property name="target">
+      <object  type="Tgpf.Isr.Service.Impl.UserProfilesService, Tgpf.Isr.Service">
+        <property name="UserProfilesDao" ref="UserProfilesDao"/>
+      </object>
+    </property>
+  </object>
+  <!-- <import resource="DeclarativeServicesAttributeDriven.xml"/>
+  <import resource="DeclarativeServicesTxProxyFactoryDriven.xml"/>
+  
+  -->
+
+
+
+</objects>

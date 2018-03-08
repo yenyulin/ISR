@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:db="http://www.springframework.net/database">
+
+  <!-- Referenced by main application context configuration file -->
+  <description>
+    The MyMall object definitions for the Data Access Objects.
+  </description>
+
+
+  <!-- Property placeholder configurer for database settings -->
+  <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+    <property name="ConfigSections" value="databaseSettings"/>
+  </object>
+
+  <!-- Database and NHibernate Configuration -->
+  <!-- MS Access -->
+  <db:provider id="DbProvider" provider="OleDb-2.0" connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|ASPNetDB.mdb"/>
+
+
+  <object id="NHibernateSessionFactory" type="Spring.Data.NHibernate.LocalSessionFactoryObject, Spring.Data.NHibernate12">
+    <property name="DbProvider" ref="DbProvider"/>
+    <property name="MappingAssemblies">
+      <list>
+        <value>Tgpf.Isr.Model</value>
+      </list>
+    </property>
+    <property name="HibernateProperties">
+      <dictionary>
+        <entry key="hibernate.connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+        <entry key="hibernate.show_sql" value="true" />
+        <!-- MS Access -->
+        <entry key="hibernate.dialect" value="NHibernate.JetDriver.JetDialect, NHibernate.JetDriver"/>
+        <entry key="hibernate.connection.driver_class" value="NHibernate.JetDriver.JetDriver, NHibernate.JetDriver"/>
+        <entry key="hibernate.current_session_context_class" value="Spring.Data.NHibernate.SpringSessionContext, Spring.Data.NHibernate12"/>
+        <!-- MS Access end -->
+      </dictionary>
+    </property>
+  </object>
+
+
+  <object id="HibernateTransactionManager"
+        type="Spring.Data.NHibernate.HibernateTransactionManager, Spring.Data.NHibernate12">
+    <property name="DbProvider" ref="DbProvider"/>
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="HibernateTemplate" type="Spring.Data.NHibernate.HibernateTemplate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory" />
+    <property name="TemplateFlushMode" value="Auto" />
+    <property name="CacheQueries" value="true" />
+  </object>
+
+  <object id="AdoTemplate" type="Spring.Data.Core.AdoTemplate, Spring.Data">
+    <property name="DbProvider" ref="DbProvider"/>
+  </object>
+
+  <!-- "Basic" Data Access Objects -->
+  <object id="HibernateUtil" type="Tgpf.Isr.Dao.HibernateUtil, Tgpf.Isr.Dao">
+    <property name="sessionFactory" ref="NHibernateSessionFactory" />
+  </object>
+  
+  <object id="BasicDao" type="Tgpf.Isr.Dao.NHibernate.HibernateBasicDao,Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+
+  <object id="SpringUtil" type="Tgpf.Isr.BaseLibrary.SpringUtil, Tgpf.Isr.BaseLibrary">
+    <property name="adoTemplate" ref="AdoTemplate" />
+  </object>
+  
+  <!-- Data Access Objects -->
+  <object id="AspnetUsersDao" type="Tgpf.Isr.Dao.NHibernate.HibernateAspnetUsersDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+
+  <object id="MembershipDao" type="Tgpf.Isr.Dao.NHibernate.HibernateMembershipDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  <object id="ZipDao" type="Tgpf.Isr.Dao.NHibernate.HibernateZipDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+
+  <object id="ReuseTechDao" type="Tgpf.Isr.Dao.NHibernate.HibernateReuseTechDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  <object id="ParamDao" type="Tgpf.Isr.Dao.NHibernate.HibernateParamDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  <object id="MatchDao" type="Tgpf.Isr.Dao.NHibernate.HibernateMatchDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  <object id="CaseDao" type="Tgpf.Isr.Dao.NHibernate.HibernateCaseDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  <object id="MarqueeDao" type="Tgpf.Isr.Dao.NHibernate.HibernateMarqueeDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  <object id="TechInfoDao" type="Tgpf.Isr.Dao.NHibernate.HibernateTechInfoDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  <object id="NewsDao" type="Tgpf.Isr.Dao.NHibernate.HibernateNewsDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  <object id="ExamplesDao" type="Tgpf.Isr.Dao.NHibernate.HibernateExamplesDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  <object id="UserProfilesDao" type="Tgpf.Isr.Dao.NHibernate.HibernateUserProfilesDao, Tgpf.Isr.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+
+</objects>

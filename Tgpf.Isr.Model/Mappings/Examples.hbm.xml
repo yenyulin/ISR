@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+ <class name="Tgpf.Isr.Model.Examples,Tgpf.Isr.Model" table="Examples" lazy="false">
+  <id name="Year" column="Year" type="string">
+	 <generator class="native" />
+  </id>
+ 
+  <property name="Amt1" column="Amt1" type="String"/>
+  <property name="Amt2" column="Amt2" type="String"/>
+  <property name="Caseid" column="CaseId" type="int"/>
+  <property name="Name1a" column="Name1A" type="String"/>
+  <property name="Name1b" column="Name1B" type="String"/>
+  <property name="Name2a" column="Name2A" type="String"/>
+  <property name="Name2b" column="Name2B" type="String"/>
+  <property name="Project1" column="Project1" type="String"/>
+  <property name="Project2" column="Project2" type="String"/>
+  <property name="Title1" column="Title1" type="String"/>
+  <property name="Title2" column="Title2" type="String"/>
+ </class>
+</hibernate-mapping>
+
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Tgpf.Isr.Model.Match,Tgpf.Isr.Model" table="MatchList" lazy="false">
+    <id name="Id" column="Id" type="int">
+      <generator class="native" />
+    </id>
+
+    <property name="Approveddate" column="ApprovedDate" type="DateTime"/>
+    <property name="Confirmdate1" column="ConfirmDate1" type="DateTime"/>
+    <property name="Confirmdate2" column="ConfirmDate2" type="DateTime"/>
+    <property name="Corp1" column="Corp1" type="String"/>
+    <property name="Corp2" column="Corp2" type="String"/>
+    <property name="Createdate1" column="CreateDate1" type="DateTime"/>
+    <property name="Createdate2" column="CreateDate2" type="DateTime"/>
+    <property name="Deletedate1" column="DeleteDate1" type="DateTime"/>
+    <property name="Deletedate2" column="DeleteDate2" type="DateTime"/>
+    <property name="Isapproved1" column="IsApproved1" type="Boolean"/>
+    <property name="Isapproved2" column="IsApproved2" type="Boolean"/>
+    <property name="Ischecked" column="IsChecked" type="String"/>
+    <property name="Isconfirm1" column="IsConfirm1" type="String"/>
+    <property name="Isconfirm2" column="IsConfirm2" type="String"/>
+    <property name="Isdeleted" column="IsDeleted" type="Boolean"/>
+    <property name="Isdeleted1" column="IsDeleted1" type="Boolean"/>
+    <property name="Isdeleted2" column="IsDeleted2" type="Boolean"/>
+    <property name="Isdroped1" column="IsDroped1" type="String"/>
+    <property name="Isdroped2" column="IsDroped2" type="String"/>
+    <property name="Matchdate" column="MatchDate" type="DateTime"/>
+    <property name="Name1" column="Name1" type="String"/>
+    <property name="Name2" column="Name2" type="String"/>
+    <property name="Reusename1" column="ReuseName1" type="String"/>
+    <property name="Reusename2" column="ReuseName2" type="String"/>
+    <property name="Rid1" column="Rid1" type="int"/>
+    <property name="Rid2" column="Rid2" type="int"/>
+    <property name="Techadv" column="TechAdv" type="String"/>
+    <property name="Techdesc" column="TechDesc" type="String"/>
+    <property name="Techitem1" column="TechItem1" type="String"/>
+    <property name="Techitem2" column="TechItem2" type="String"/>
+    <property name="Techname1" column="TechName1" type="String"/>
+    <property name="Techname2" column="TechName2" type="String"/>
+    <property name="Tel1" column="Tel1" type="String"/>
+    <property name="Tel2" column="Tel2" type="String"/>
+    <property name="Username1" column="UserName1" type="String"/>
+    <property name="Username2" column="UserName2" type="String"/>
+    <property name="Wasteitem1" column="WasteItem1" type="String"/>
+    <property name="Wasteitem2" column="WasteItem2" type="String"/>
+    <property name="Wastename1" column="WasteName1" type="String"/>
+    <property name="Wastename2" column="WasteName2" type="String"/>
+  </class>
+</hibernate-mapping>
+
+

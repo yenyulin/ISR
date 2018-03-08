@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AD1B3419-4D44-44BB-88CA-D104AC4F289E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tgpf.Isr.Dao</RootNamespace>
+    <AssemblyName>Tgpf.Isr.Dao</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib12\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop, Version=1.2.0.20313, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib12\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aspects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib12\Spring.Aspects.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.2.0.20313, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib12\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.2.0.20313, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib12\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate12, Version=1.2.0.20313, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib12\Spring.Data.NHibernate12.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web, Version=1.2.0.20313, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib12\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IAspnetUsersDao.cs" />
+    <Compile Include="IBasicDao.cs" />
+    <Compile Include="ICaseDao.cs" />
+    <Compile Include="ICityDao.cs" />
+    <Compile Include="IExamplesDao.cs" />
+    <Compile Include="IMarqueeDao.cs" />
+    <Compile Include="IMatchDao.cs" />
+    <Compile Include="IMembershipDao.cs" />
+    <Compile Include="INewsDao.cs" />
+    <Compile Include="IParamDao.cs" />
+    <Compile Include="IReuseTechDao.cs" />
+    <Compile Include="ITechInfoDao.cs" />
+    <Compile Include="IUserProfilesDao.cs" />
+    <Compile Include="IZipDao.cs" />
+    <Compile Include="NHibernate\HibernateAspnetUsersDao.cs" />
+    <Compile Include="NHibernate\HibernateBasicDao.cs" />
+    <Compile Include="NHibernate\HibernateCaseDao.cs" />
+    <Compile Include="NHibernate\HibernateCityDao.cs" />
+    <Compile Include="NHibernate\HibernateExamplesDao.cs" />
+    <Compile Include="NHibernate\HibernateMarqueeDao.cs" />
+    <Compile Include="NHibernate\HibernateMatchDao.cs" />
+    <Compile Include="NHibernate\HibernateMembershipDao.cs" />
+    <Compile Include="NHibernate\HibernateNewsDao.cs" />
+    <Compile Include="NHibernate\HibernateParamDao.cs" />
+    <Compile Include="NHibernate\HibernateReuseTechDao.cs" />
+    <Compile Include="NHibernate\HibernateTechInfoDao.cs" />
+    <Compile Include="NHibernate\HibernateUserProfilesDao.cs" />
+    <Compile Include="NHibernate\HibernateUtil.cs" />
+    <Compile Include="NHibernate\HibernateZipDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tgpf.Isr.Model\Tgpf.Isr.Model.csproj">
+      <Project>{2FD33D14-261E-4521-AA6E-90A0F27AEE5A}</Project>
+      <Name>Tgpf.Isr.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

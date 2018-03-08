@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Tgpf.Isr.Model.AspnetUsers,Tgpf.Isr.Model" table="aspnet_Users" lazy="false">
+    <id name="UserId" column="UserId" type="String">
+      <generator class="guid" />
+    </id>
+
+    <property name="UserName" column="UserName" type="String" not-null="true" />
+    <property name="MobileAlias" column="MobileAlias" type="String" />
+    <property name="IsAnonymous" column="IsAnonymous" type="Boolean" />
+    <property name="LastActivityDate" column="LastActivityDate" type="DateTime" />
+
+  </class>
+</hibernate-mapping>

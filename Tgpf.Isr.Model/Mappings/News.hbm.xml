@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+ <class name="Tgpf.Isr.Model.News,Tgpf.Isr.Model" table="News" lazy="false">
+  <id name="Id" column="Id" type="int">
+	 <generator class="native" />
+  </id>
+ 
+  <property name="Createdate" column="CreateDate" type="DateTime"/>
+  <property name="Isonline" column="IsOnLine" type="String"/>
+  <property name="Isshow" column="IsShow" type="Boolean"/>
+  <property name="Link" column="Link" type="String"/>
+  <property name="Showdate" column="ShowDate" type="DateTime"/>
+  <property name="Summary" column="Summary" type="String"/>
+  <property name="Title" column="Title" type="String"/>
+ </class>
+</hibernate-mapping>
+
+

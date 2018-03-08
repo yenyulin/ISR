@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+ 
+  <class name="Tgpf.Isr.Model.AspnetMembership,Tgpf.Isr.Model" table="aspnet_Membership" lazy="false">
+    <id name="UserId" column="UserId" type="String">
+      <generator class="guid" />
+    </id>    
+    <property name="Email" column="Email" type="String" not-null="true" />
+    <property name="IsApproved" column="IsApproved" type="Boolean" />
+    
+    <!--<property name="Password" column="Password" type="String" not-null="true" />
+    <property name="PasswordFormat" column="PasswordFormat" type="int" />
+    <property name="Mobilepin" column="MobilePIN" type="String" />        
+    <property name="PasswordAnswer" column="PasswordAnswer" type="String" />   
+    <property name="CreateDate" column="CreateDate" type="DateTime" />
+    <property name="LastLoginDate" column="LastLoginDate" type="DateTime" />
+    <property name="LastPasswordChangedDate" column="LastPasswordChangedDate" type="DateTime" />
+    <property name="Comment" column="Comment" type="String" />
+    <property name="PasswordSalt" column="PasswordSalt" type="String" />-->
+     
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="manager.master.cs" Inherits="Template_manager" %>
+ <%@ Assembly Name="System.Web.Extensions" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>資源化技術研發供需資訊平台</title>
+ 
+
+</head>
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0"  >
+    <form id="webform" runat="server">
+        <asp:ScriptManager ID="scriptMgr" runat="server" />
+        <div>
+            <br />
+            <table width="95%" border="0" align="center" cellpadding="5" cellspacing="1">
+                <tr>
+                    <td align="center">
+                        <img src="../image/frame/title2-1.gif" alt="*">
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Tgpf.Isr.Model.Case,Tgpf.Isr.Model" table="ReuseCase" lazy="false">
+    <id name="Id" column="Id" type="int">
+      <generator class="native" />
+    </id>
+
+    <property name="Casedesc" column="CaseDesc" type="String"/>
+    <property name="Createdate" column="CreateDate" type="DateTime"/>
+    <property name="Helpdesc" column="HelpDesc" type="String"/>
+    <property name="Isdeleted" column="IsDeleted" type="Boolean"/>
+    <property name="Name" column="Name" type="String"/>
+    <property name="Techitem" column="TechItem" type="String"/>
+    <property name="Techname" column="TechName" type="String"/>
+    <property name="Techother" column="TechOther" type="String"/>
+    <property name="Type" column="Type" type="String"/>
+    <property name="Wasteitem" column="WasteItem" type="String"/>
+    <property name="Wastename" column="WasteName" type="String"/>
+    <property name="Wasteother" column="WasteOther" type="String"/>
+    <property name="Datasource" column="DataSource" type="String"/>
+  </class>
+</hibernate-mapping>
+
+

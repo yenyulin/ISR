@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3943975F-6550-476F-A767-765287F52A3A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tgpf.Isr.Service</RootNamespace>
+    <AssemblyName>Tgpf.Isr.Service</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Spring.Data, Version=1.2.0.20313, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib12\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IAspnetUsersService.cs" />
+    <Compile Include="IBasicService.cs" />
+    <Compile Include="ICaseService.cs" />
+    <Compile Include="ICityService.cs" />
+    <Compile Include="IExamplesService.cs" />
+    <Compile Include="IMarqueeService.cs" />
+    <Compile Include="IMatchService.cs" />
+    <Compile Include="IMembershipService.cs" />
+    <Compile Include="Impl\AspnetUsersService.cs" />
+    <Compile Include="Impl\BasicService.cs" />
+    <Compile Include="Impl\CaseService.cs" />
+    <Compile Include="Impl\CityService.cs" />
+    <Compile Include="Impl\ExamplesService.cs" />
+    <Compile Include="Impl\MarqueeService.cs" />
+    <Compile Include="Impl\MatchService.cs" />
+    <Compile Include="Impl\MembershipService.cs" />
+    <Compile Include="Impl\NewsService.cs" />
+    <Compile Include="Impl\ParamService.cs" />
+    <Compile Include="Impl\ReuseTechService.cs" />
+    <Compile Include="Impl\TechInfoService.cs" />
+    <Compile Include="Impl\UserProfilesService.cs" />
+    <Compile Include="Impl\ZipService.cs" />
+    <Compile Include="INewsService.cs" />
+    <Compile Include="IParamService.cs" />
+    <Compile Include="IReuseTechService.cs" />
+    <Compile Include="ITechInfoService.cs" />
+    <Compile Include="IUserProfilesService.cs" />
+    <Compile Include="IZipService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tgpf.Isr.Dao\Tgpf.Isr.Dao.csproj">
+      <Project>{AD1B3419-4D44-44BB-88CA-D104AC4F289E}</Project>
+      <Name>Tgpf.Isr.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tgpf.Isr.Model\Tgpf.Isr.Model.csproj">
+      <Project>{2FD33D14-261E-4521-AA6E-90A0F27AEE5A}</Project>
+      <Name>Tgpf.Isr.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

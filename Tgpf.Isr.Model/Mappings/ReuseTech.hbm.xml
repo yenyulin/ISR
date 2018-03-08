@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+ <class name="Tgpf.Isr.Model.ReuseTech,Tgpf.Isr.Model" table="ReuseTech" lazy="false">
+  <id name="Id" column="Id" type="int">
+	 <generator class="native" />
+  </id>
+ 
+  <property name="Createdate" column="CreateDate" type="DateTime"/>
+  <property name="Isapproved" column="IsApproved" type="Boolean"/>
+  <property name="Patent" column="Patent" type="String"/>
+  <property name="Researchitem" column="ResearchItem" type="String"/>
+  <property name="Reusename" column="ReuseName" type="String"/>
+  <property name="Techadv" column="TechAdv" type="String"/>
+  <property name="Techdesc" column="TechDesc" type="String"/>
+  <property name="Techitem" column="TechItem" type="String"/>
+  <property name="Techname" column="TechName" type="String"/>
+  <property name="Techother" column="TechOther" type="String"/>
+  <property name="Type" column="Type" type="String"/>
+  <property name="Username" column="UserName" type="String"/>
+  <property name="Wasteitem" column="WasteItem" type="String"/>
+  <property name="Wastename" column="WasteName" type="String"/>
+  <property name="Wasteother" column="WasteOther" type="String"/>
+ </class>
+</hibernate-mapping>
+
+
